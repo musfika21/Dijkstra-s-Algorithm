@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Molle&display=swap"
+        rel="stylesheet">
+    <title>Dijkstra's Algorithm Project</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .molle-regular-italic {
+  font-family: "Molle", cursive;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.afacad-flux {
+  font-family: "Afacad Flux", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "slnt" 0;
+}
+
+
+        .primary-color {
+            background-color: #23314A;
+            color: white;
+        }
+
+        .secondary-color {
+            color: #8FA1B1;
+        }
+
+        .content-section {
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+        }
+
+        .active-btn {
+            background-color: #DB8084 !important;
+            color: black;
+        }
+
+        .main-content {
+            background: linear-gradient(135deg, #DB808499 0%, #ffffff 100%);
+            min-height: 100vh;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100 font-sans flex">
+    <!-- Sidebar -->
+    <div class="w-1/4 h-screen primary-color p-6">
+        <h1 class="text-2xl font-bold mb-6 molle-regular-italic">Dijkstra's Algorithm</h1>
+        <ul class="space-y-4" id="sidebarMenu">
+            <li class=" afacad-flux"><button class="w-full text-left secondary-color hover:bg-gray-700 p-2 rounded"
+                    onclick="showSection('introduction')">Introduction</button></li>
+            <li class=" afacad-flux"><button class="w-full text-left secondary-color hover:bg-gray-700 p-2 rounded"
+                    onclick="showSection('objectives')">Objectives</button></li>
+            <li class=" afacad-flux"><button class="w-full text-left secondary-color hover:bg-gray-700 p-2 rounded"
+                    onclick="showSection('scope')">Scope of Work</button></li>
+            <li class=" afacad-flux"><button class="w-full text-left secondary-color hover:bg-gray-700 p-2 rounded"
+                    onclick="showSection('methodology')">Methodology</button></li>
+            <li class=" afacad-flux"><button class="w-full text-left secondary-color hover:bg-gray-700 p-2 rounded"
+                    onclick="showSection('timeline')">Timeline</button></li>
+            <li class=" afacad-flux"><button class="w-full text-left secondary-color hover:bg-gray-700 p-2 rounded"
+                    onclick="showSection('budget')">Budget</button></li>
+            <li class=" afacad-flux"><button class="w-full text-left secondary-color hover:bg-gray-700 p-2 rounded"
+                    onclick="showSection('outcomes')">Expected Outcomes</button></li>
+        </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="w-3/4 main-content afacad-flux">
+        <div id="introduction" class="content-section active card p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4 border-b-2 border-gray-500 pb-2 text-gray-800">Introduction</h2>
+            <div class="text-gray-700 space-y-4">
+                <p class="text-lg leading-relaxed">Dijkstra's Algorithm is a fundamental graph algorithm used to find
+                    the shortest path between nodes in a weighted graph.</p>
+                <p class="text-lg leading-relaxed">It is widely applied in network routing, geographic mapping, and
+                    various optimization problems.</p>
+                <p class="text-lg leading-relaxed">This project aims to implement the algorithm, test it on different
+                    datasets, and evaluate its performance.</p>
+            </div>
+        </div>
+
+        <div id="objectives" class="content-section card p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4 border-b-2 border-gray-500 pb-2 text-gray-800">Objectives</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-3">
+                <li class="text-lg leading-relaxed">To develop a clear understanding of the principles behind Dijkstra's
+                    Algorithm.</li>
+                <li class="text-lg leading-relaxed">To implement the algorithm using a suitable programming language.
+                </li>
+                <li class="text-lg leading-relaxed">To evaluate the algorithm's performance on diverse weighted graphs.
+                </li>
+                <li class="text-lg leading-relaxed">To analyze the time and space complexity of the implementation.</li>
+            </ul>
+        </div>
+
+        <div id="scope" class="content-section card p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4 border-b-2 border-gray-500 pb-2 text-gray-800">Scope of Work</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-3">
+                <li class="text-lg leading-relaxed">Study the theoretical background of the algorithm.</li>
+                <li class="text-lg leading-relaxed">Write efficient code for Dijkstra's Algorithm in Python/Java/C++.
+                </li>
+                <li class="text-lg leading-relaxed">Generate multiple weighted graph test cases for validation.</li>
+            </ul>
+        </div>
+
+        <div id="methodology" class="content-section card p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4 border-b-2 border-gray-500 pb-2 text-gray-800">Methodology</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-3">
+                <li class="text-lg leading-relaxed">Literature review and study of algorithm principles.</li>
+                <li class="text-lg leading-relaxed">Software development using IDEs such as VS code or PyCharm.</li>
+                <li class="text-lg leading-relaxed">Testing and debugging on various datasets.</li>
+                <li class="text-lg leading-relaxed">Use of visualization tools to illustrate results.</li>
+            </ul>
+        </div>
+
+        <div id="timeline" class="content-section card p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4 border-b-2 border-gray-500 pb-2 text-gray-800">Timeline</h2>
+            <table class="w-full text-left border-collapse">
+                <tr class="bg-gray-200 rounded-t-lg">
+                    <th class="border p-3 rounded-tl-lg text-gray-800">Week</th>
+                    <th class="border p-3 rounded-tr-lg text-gray-800">Activities</th>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <td class="border p-3">1-2</td>
+                    <td class="border p-3">Literature review and planning</td>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <td class="border p-3">3-4</td>
+                    <td class="border p-3">Coding and initial testing</td>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <td class="border p-3">5</td>
+                    <td class="border p-3">Performance analysis and refinement</td>
+                </tr>
+                <tr class="hover:bg-gray-100">
+                    <td class="border p-3">6</td>
+                    <td class="border p-3">Report writing and presentation</td>
+                </tr>
+            </table>
+        </div>
+
+        <div id="budget" class="content-section card p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4 border-b-2 border-gray-500 pb-2 text-gray-800">Budget</h2>
+            <div class="text-gray-700 space-y-4">
+                <p class="text-lg leading-relaxed">The project primarily requires software tools, which are freely
+                    available.</p>
+                <p class="text-lg leading-relaxed">Minor expenses may be incurred for printing and presentation
+                    materials, estimated at approximately 5000 to 10,000 BDT.</p>
+            </div>
+        </div>
+
+        <div id="outcomes" class="content-section card p-6 mb-6">
+            <h2 class="text-2xl font-semibold mb-4 border-b-2 border-gray-500 pb-2 text-gray-800">Expected Outcomes</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-3">
+                <li class="text-lg leading-relaxed">A functional implementation of Dijkstra's Algorithm.</li>
+                <li class="text-lg leading-relaxed">Detailed performance evaluation reports.</li>
+                <li class="text-lg leading-relaxed">Enhanced understanding of shortest path algorithms and their
+                    applications.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            const sections = document.getElementsByClassName('content-section');
+            for (let section of sections) {
+                section.classList.remove('active');
+            }
+            document.getElementById(sectionId).classList.add('active');
+
+            const buttons = document.querySelectorAll('#sidebarMenu button');
+            buttons.forEach(button => button.classList.remove('active-btn'));
+            event.target.classList.add('active-btn');
+        }
+
+        // Set initial active button
+        document.querySelector('#sidebarMenu button').classList.add('active-btn');
+    </script>
+</body>
+
+</html>
